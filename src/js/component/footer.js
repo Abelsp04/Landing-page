@@ -1,15 +1,11 @@
 import React from "react";
+import ReactDOM from "react-dom";
+import "bootstrap";
 
-//include images into your bundle
-// import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
-const Footer=()=> {
+export function Footer() {
 	return (
-		<div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <p>Copyright © Your Website 2019</p>
-        </nav>
-        </div>
-    )}
-        export default Footer;
+		<div className="navbar navbar-dark bg-dark">
+			Copyright © Your Website 2019
+		</div>
+	);
+}

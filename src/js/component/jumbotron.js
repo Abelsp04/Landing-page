@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "bootstrap";
 
-const Jumbotron = () => {
+export function Jumbotron() {
 	return (
 		<div className="jumbotron">
 			<h1 className="display-4">Hello, world!</h1>
@@ -19,5 +20,4 @@ const Jumbotron = () => {
 			</a>
 		</div>
 	);
-};
-export default Jumbotron;
+}

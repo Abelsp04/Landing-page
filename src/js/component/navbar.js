@@ -1,53 +1,35 @@
 import React from "react";
-import ReactDOM from "react-dom";
-//include images into your bundle
-// import rigoImage from "../../img/rigo-baby.jpg";
+import ReactDom from "react-dom";
 
-//create your first component
-const Navbar = () => {
+import "bootstrap";
+
+export function Navbar() {
 	return (
-		<div>
-			<nav className="navbar navbar-expand-lg navbar-light bg-light">
-				<button
-					className="navbar-toggler"
-					type="button"
-					data-toggle="collapse"
-					data-target="#navbarTogglerDemo01"
-					aria-controls="navbarTogglerDemo01"
-					aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span className="navbar-toggler-icon" />
-				</button>
-				<div
-					className="collapse navbar-collapse"
-					id="navbarTogglerDemo01">
-					<a className="navbar-brand" href="#">
-						Hidden brand
+		<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a className="navbar-brand" href="#">
+				Navbar
+			</a>
+
+			<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div className="navbar-nav">
+					<a className="nav-item nav-link active" href="#">
+						Home <span className="sr-only">(current)</span>
 					</a>
-					<ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-						<li className="nav-item active">
-							<a className="nav-link" href="#">
-								Home <span className="sr-only">(current)</span>
-							</a>
-						</li>
-						<li className="nav-item">
-							<a className="nav-link" href="#">
-								Link
-							</a>
-						</li>
-						<li className="nav-item">
-							<a
-								className="nav-link disabled"
-								href="#"
-								tabindex="-1"
-								aria-disabled="true">
-								Disabled
-							</a>
-						</li>
-					</ul>
+					<a className="nav-item nav-link" href="#">
+						Features
+					</a>
+					<a className="nav-item nav-link" href="#">
+						Pricing
+					</a>
+					<a
+						className="nav-item nav-link disabled"
+						href="#"
+						tabIndex="-1"
+						aria-disabled="true">
+						Disabled
+					</a>
 				</div>
-			</nav>
-		</div>
+			</div>
+		</nav>
 	);
-};
-export default Navbar;
+}
