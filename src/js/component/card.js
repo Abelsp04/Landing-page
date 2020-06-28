@@ -1,26 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import PropType from "prop-types";
 
-import "bootstrap";
-
-export function Card() {
+const BootstrapCard = props => {
+	// 1) replace the hard-coded image, description, link, etc. With their property variable.
 	return (
-		<div className="card">
-			<img
-				src="https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/img.jpg"
-				className="card-img-top"
-				alt="..."
-			/>
+		<div className="card m-5">
+			<img className="card-img-top" src={PropType.imageUrl} alt="Card image cap" />
 			<div className="card-body">
-				<h5 className="card-title">Card title</h5>
-				<p className="card-text">
-					Some quick example text to build on the card title and make
-					up.
-				</p>
-				<a href="#" className="btn btn-primary">
-					Go somewhere
+				<h5 className="card-title">{props.title}</h5>
+				<p className="card-text">{props.description}</p>
+				<a href={PropType.imageUrl} className="btn btn-primary">
+					{PropType.buttonUrl}
 				</a>
 			</div>
 		</div>
 	);
-}
+};
+BootstrapCard.propTypes = {
+	title: PropType.string,
+	// 2) add here the new properties into the proptypes object
+	imageUrl: PropType.href,
+	description: PropType.string,
+	buttonUrl: PropType.url,
+	buttonLabel: PropType.string
+};
+
+// 3) Use ReactDOM to add the component into then DOM element #myDiv
+ReactDOM.render(
+	<BootstrapCard
+		title="Bob Dylan"
+		imageUrl="https://ucarecdn.com/f8cf81eb-3bab-4bba-9431-668884eab174/-/resize/300x/"
+		description="Bob Dylan (born Robert Allen Zimmerman, May 24, 1941) is an American singer-songwriter."
+		buttonUrl="https://en.wikipedia.org/wiki/Bob_Dylan"
+		buttonLabel="Go to wikipedia"
+	/>, document.querySelector("#myDiv")
+);
