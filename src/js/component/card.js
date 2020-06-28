@@ -34,5 +34,5 @@ ReactDOM.render(
 		description="Bob Dylan (born Robert Allen Zimmerman, May 24, 1941) is an American singer-songwriter."
 		buttonUrl="https://en.wikipedia.org/wiki/Bob_Dylan"
 		buttonLabel="Go to wikipedia"
-	/>, document.querySelector("#myDiv")
+	/>, document.querySelector("#app")
 );
